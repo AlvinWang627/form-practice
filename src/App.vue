@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- input type file test -->
     <!-- <FormulateInput
       type="file"
       name="file"
@@ -42,20 +43,15 @@
 </template>
 
 <script>
-// const currentDate = document.querySelector('.test');
 export default {
   name: 'App',
-  //禮拜幾
-  //mindays
   data() {
     return {
       date: '',
       min: '',
     };
   },
-  methods: {
-    getDays() {},
-  },
+  //顯示禮拜幾用
   computed: {
     translateDays() {
       let weekday = new Date(this.date).getDay();
@@ -66,10 +62,10 @@ export default {
       }
     },
   },
+  //更新屬性min用
   watch: {
-    date(newValue, oldValue) {
+    date(newValue) {
       this.min = newValue;
-      console.log(newValue, oldValue);
     },
   },
 };
